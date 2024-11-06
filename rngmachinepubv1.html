@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>The randomiser</title>
+    <style type="text/css">
+        body {
+            background-color: #111;
+        }
+
+        .titlerino {
+            background-color: rgb(41, 5, 5);
+            background-image:linear-gradient(rgb(150, 127, 127),5%,rgb(100, 1, 1),75%,rgb(41, 5, 5));
+        }
+        .redlybg {
+            background-color: rgb(41, 5, 5);
+        }
+        .strategem {
+            border:1px #ffc107 solid;
+            background-color: rgb(17, 5, 5);
+            padding:1rem;
+        }
+
+        .strategem img {
+            width:100%;
+            max-width: 12rem;
+            margin-bottom:1rem;
+        }
+        .footerino {
+            height:3rem;
+            background-image:linear-gradient(rgb(41, 5, 5),rgb(0,0,0));
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container-xl mt-3">
+        <div class="row">
+                <div class="titlerino p-3 text-center text-light rounded-top-5"><h1>Helldive randomiser</h1></div>
+            
+        </div>
+    </div>
+    <div class="container-xl redlybg">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-10">
+                <div class="text-light p-3">I get it, you barely die on Super Helldives. You have the game wrapped up: The goated god with the most kills and least deaths, highly effective in team or solo. So why not throw yourself a challenge? Drop in with a random assortment of strats and prove you are a true soldier of Super Earth. Be lethally effective no matter the kit. And hey I figure you can still choose your weapons and armour so it's not all RNG. And I won't judge if you reroll on Eagle Smoke Strike.</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-5 mt-3">
+                    <div class="strategem text-center text-white rounded-4" id="eagle">Run</div>
+            </div>
+            <div class="col-sm-6 col-md-5 mt-3">
+               <div class="strategem text-center text-white rounded-4" id="orbital">Javascript</div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+                <div class="col-sm-6 col-md-5 mt-3">
+                    <div class="strategem text-center text-white rounded-4" id="sentry">You</div>
+                </div>
+                <div class="col-sm-6 col-md-5 mt-3">
+                    <div class="strategem text-center text-white rounded-4" id="support">Peanut</div>
+                </div>            
+            
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="text-center p-3">
+                    <button class="btn btn-outline-warning btn-lg"  onclick="activatizebutton()">Re-roll</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-xl">
+        <div class="row footerino rounded-bottom-5 mb-3">
+            &nbsp;
+        </div>
+    </div>
+    <script>
+        let eagle = [], orbital = [], support = [], sentry = []
+        const eagletext = document.getElementById("eagle");
+        const orbtext = document.getElementById("orbital");
+        const sentrytext = document.getElementById("sentry");
+        const supporttext = document.getElementById("support");
+        /* as a basic overview I want to have functions that assi
+        gn two values to the variables, one is the name and the other is the image name
+        when you click the button it should call a function that calls all the functions I guess. So the functions just pick a random number and then output based on the case statements within perhaps. so a random number with a case statement return... who knows how that will show in HTML LOL */
+
+        function selecteagle() {
+            r = Math.floor(Math.random()*7)
+            switch(r) {
+                case 0:
+				eagle[0] = "Eagle Strafing Run";
+                eagle[1] = "img/eagle-strafing.png";
+				break;
+                case 1:
+				eagle[0] = "Eagle Airstrike";
+                eagle[1] = "img/eagle-airstrike.png";
+				break;
+                case 2:
+				eagle[0] = "Eagle Cluster Bomb";
+                eagle[1] = "img/eagle-cluster.png";
+				break;
+                case 3:
+				eagle[0] = "Eagle Napalm Airstrike";
+                eagle[1] = "img/eagle-napalm.png";
+				break;
+                case 4:
+				eagle[0] = "Eagle Smoke Strike";
+                eagle[1] = "img/eagle-smoke.png";
+				break;
+                case 5:
+				eagle[0] = "Eagle 110mm Rocket Pods";
+                eagle[1] = "img/eagle-110.png";
+				break;
+                case 6:
+				eagle[0] = "Eagle 500kg Bomb";
+                eagle[1] = "img/eagle-500.png";
+				break;
+				default:
+				eagle[0] = "Something went wrong";
+                eagle[1] = "error.png";
+
+            }
+        }
+        function selectorbital() {
+            r = Math.floor(Math.random()*12)
+            switch(r) {
+                case 0:
+				orbital[0] = "Orbital Gatling Barrage";
+                orbital[1] = "img/orb-gatling.png";
+				break;
+                case 1:
+				orbital[0] = "Orbital Airburst Strike";
+                orbital[1] = "img/orb-airburst.png";
+				break;
+                case 2:
+				orbital[0] = "Orbital 120mm HE Barrage";
+                orbital[1] = "img/orb-120.png";
+				break;
+                case 3:
+				orbital[0] = "Orbital 380mm HE Barrage";
+                orbital[1] = "img/orb-380.png";
+				break;
+                case 4:
+				orbital[0] = "Orbital Walking Barrage";
+                orbital[1] = "img/orb-walking.png";
+				break;
+                case 5:
+				orbital[0] = "Orbital Laser";
+                orbital[1] = "img/orb-laser.png";
+				break;
+                case 6:
+				orbital[0] = "Orbital Napalm Barrage";
+                orbital[1] = "img/orb-napalm.png";
+				break;
+                case 7:
+				orbital[0] = "Orbital Railcannon Strike";
+                orbital[1] = "img/orb-rcs.png";
+				break;
+                case 8:
+				orbital[0] = "Orbital Precision Strike";
+                orbital[1] = "img/orb-ps.png";
+				break;
+                case 9:
+				orbital[0] = "Orbital Gas Strike";
+                orbital[1] = "img/orb-gas.png";
+				break;
+                case 10:
+				orbital[0] = "Orbital EMS Strike";
+                orbital[1] = "img/orb-ems.png";
+				break;
+                case 11:
+				orbital[0] = "Orbital Smoke Strike";
+                orbital[1] = "img/orb-smoke.png";
+				break;
+				default:
+				orbital[0] = "Something went wrong";
+                orbital[1] = "error.png";
+
+            }
+        }
+        function selectsupport() {
+            r = Math.floor(Math.random()*12)
+            switch(r) {
+                case 0:
+				support[0] = "MG-43 Machine Gun";
+                support[1] = "img/support-mg43.png";
+				break;
+                case 1:
+				support[0] = "Anti-Materiel Rifle";
+                support[1] = "img/support-amr.png";
+				break;
+                case 2:
+				support[0] = "M-105 Stalwart";
+                support[1] = "img/support-stalwart.png";
+				break;
+                case 3:
+				support[0] = "EAT-17 Expendable Anti-Tank";
+                support[1] = "img/support-eat.png";
+				break;
+                case 4:
+				support[0] = "GR-8 Recoilless Rifle";
+                support[1] = "img/support-rr.png";
+				break;
+                case 5:
+				support[0] = "FLAM-40 Flamethrower";
+                support[1] = "img/support-flam.png";
+				break;
+                case 6:
+				support[0] = "AC-8 Autocannon";
+                support[1] = "img/support-ac.png";
+				break;
+                case 7:
+				support[0] = "MG-206 Heavy Machine Gun";
+                support[1] = "img/support-hmg.png";
+				break;
+                case 8:
+				support[0] = "RL-77 Airburst Rocket Launcher";
+                support[1] = "img/support-airburst.png";
+				break;
+                case 9:
+				support[0] = "MLS-4X Commando";
+                support[1] = "img/support-commando.png";
+				break;
+                case 10:
+				support[0] = "RS-422 Railgun";
+                support[1] = "img/support-railgun.png";
+				break;
+                case 11:
+				support[0] = "FAF-14 Spear";
+                support[1] = "img/support-spear.png";
+				break;
+				default:
+				support[0] = "Something went wrong";
+                support[1] = "error.png";
+
+            }
+        }
+        function selectsentry() {
+            r = Math.floor(Math.random()*9)
+            switch(r) {
+                case 0:
+				sentry[0] = "E/MG-101 HMG Emplacement";
+                sentry[1] = "img/sentry-hmg.png";
+				break;
+                case 1:
+				sentry[0] = "FX-12 Shield Generator Relay";
+                sentry[1] = "img/sentry-shield.png";
+				break;
+                case 2:
+				sentry[0] = "A/ARC-3 Tesla Tower";
+                sentry[1] = "img/sentry-tesla.png";
+				break;
+                case 3:
+				sentry[0] = "A/MG-43 Machine Gun Sentry";
+                sentry[1] = "img/sentry-mg.png";
+				break;
+                case 4:
+				sentry[0] = "A/G-16 Gatling Sentry";
+                sentry[1] = "img/sentry-gatling.png";
+				break;
+                case 5:
+				sentry[0] = "A/M-12 Mortar Sentry";
+                sentry[1] = "img/sentry-mortar.png";
+				break;
+                case 6:
+				sentry[0] = "A/AC-8 Autocannon Sentry";
+                sentry[1] = "img/sentry-ac.png";
+				break;
+                case 7:
+				sentry[0] = "A/MLS-4X Rocket Sentry";
+                sentry[1] = "img/sentry-rocket.png";
+				break;
+                case 8:
+				sentry[0] = "A/M-23 EMS Mortar Sentry";
+                sentry[1] = "img/sentry-ems.png";
+				break;
+				default:
+				sentry[0] = "Something went wrong";
+                sentry[1] = "error.png";
+
+            }
+        }
+
+        function activatizebutton() {
+            selecteagle();
+            selectorbital();
+            selectsupport();
+            selectsentry();
+            eagletext.innerHTML ="<img src='" + eagle[1] + "'><p>"+ eagle[0]+"</p>";
+            orbtext.innerHTML ="<img src='" + orbital[1] + "'><p>"+ orbital[0]+"</p>";
+            sentrytext.innerHTML ="<img src='" + sentry[1] + "'><p>"+ sentry[0]+"</p>";
+            supporttext.innerHTML ="<img src='" + support[1] + "'><p>"+ support[0]+"</p>";
+        }
+
+        /* now you need code that on button press runs those four strategems and outputs both array values to text in html and however you do the image also */
+        activatizebutton();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
